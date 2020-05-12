@@ -46,7 +46,7 @@ var score = 0; // aantal behaalde punten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
+  fill("black");
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
@@ -79,7 +79,7 @@ var tekenKogel = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenSpeler = function(x, y) {
-  fill("white");
+  fill("yellow");
   ellipse(x, y, 50, 50);
 };
 
@@ -104,11 +104,44 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
+
+
+
+
 var beweegSpeler = function() {
+if (keyIsDown(39) && spelerX < 1230)
 
+spelerX = spelerX + 3;
+
+else 
+
+spelerX = spelerX + 0;
+
+if (keyIsDown(37) && spelerX > 50)
+
+spelerX = spelerX - 3;
+    
+
+else 
+
+spelerX = spelerX - 0;
+
+if (keyIsDown(40) && spelerY < 670)
+
+spelerY = spelerY + 3;
+
+else
+
+spelerY = spelerY + 0;
+
+if (keyIsDown(38) && spelerY > 50)
+
+spelerY = spelerY - 3;
+
+else
+
+spelerY = spelerY - 0;
 };
-
-
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
@@ -120,8 +153,7 @@ var checkVijandGeraakt = function() {
 
 
 /**
- * Zoekt uit of de speler is geraakt
- * bijvoorbeeld door botsing met vijand
+ * Zoekt uit of de speler is geraakt * bijvoorbeeld door botsing met vijand
  * @returns {boolean} true als speler is geraakt
  */
 var checkSpelerGeraakt = function() {
